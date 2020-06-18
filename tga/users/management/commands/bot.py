@@ -1,7 +1,5 @@
 from django.core.management.base import BaseCommand
-import telebot
-
-from users.management.commands.calc_ import calc_step_1
+from users.management.commands.calc_ import *
 from tga.settings import TOKEN
 bot = telebot.TeleBot(TOKEN)
 
@@ -25,8 +23,6 @@ def send_text(message):
         bot.send_message(message.chat.id, 'Прощай, создатель')
     elif message.text == 'Калькулятор':
         calc_step_1(message)
-    else:
-        print("else", message.text)
-        start_message()
+
 
 bot.polling()

@@ -11,7 +11,6 @@ res = {"num1": "",
        }
 
 
-@bot.message_handler(content_types=['text'])
 def calc_step_1(message):
     """Ввод первого числа"""
     keyboard = telebot.types.ReplyKeyboardRemove(selective=False) # Удаляем клавиатуру
